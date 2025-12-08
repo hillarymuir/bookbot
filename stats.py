@@ -17,3 +17,11 @@ def char_count(book_text):
         
     return char_dict
 
+# sort character count dictionary and generate a formatted report
+def generate_report_list(char_count_dict):
+    report_list = []
+
+    for key in char_count_dict:
+        report_list.append({"char": key, "num": char_count_dict[key]})
+
+    return report_list
