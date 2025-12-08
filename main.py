@@ -1,5 +1,6 @@
 from stats import word_count, char_count
 
+# read book text from file into a str
 def get_book_text(filepath):
     with open(filepath) as f:
         return f.read()
