@@ -21,7 +21,16 @@ def char_count(book_text):
 def generate_report_list(char_count_dict):
     report_list = []
 
+    # make a list of character counts for sorting
+    value_list = []
     for key in char_count_dict:
-        report_list.append({"char": key, "num": char_count_dict[key]})
+        value_list.append(char_count_dict[key])
+    value_list.sort(reverse=True)
+    
+    # build report list in sorted order
+    for value in value_list:
+        for key in char_count_dict:
+            if char_count_dict[key] == value:
+                report_list.append({"char": key, "num": value})
 
     return report_list
